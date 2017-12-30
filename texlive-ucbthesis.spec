@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-ucbthesis
-Version:	20140621
-Release:	4
+Version:	20170414
+Release:	1
 Summary:	TeXLive ucbthesis package
 Group:		Publishing
 URL:		http://tug.org/texlive
