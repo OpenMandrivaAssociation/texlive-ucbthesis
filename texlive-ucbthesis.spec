@@ -5,7 +5,7 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-ucbthesis
-Version:	20170414
+Version:	3.5
 Release:	1
 Summary:	TeXLive ucbthesis package
 Group:		Publishing
