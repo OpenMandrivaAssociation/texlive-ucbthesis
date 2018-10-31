@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-ucbthesis
 Version:	3.5
-Release:	1
+Release:	2
 Summary:	TeXLive ucbthesis package
 Group:		Publishing
 URL:		http://tug.org/texlive
