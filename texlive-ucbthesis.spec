@@ -1,6 +1,6 @@
 Name:		texlive-ucbthesis
 Version:	51690
-Release:	1
+Release:	2
 Summary:	TeXLive ucbthesis package
 Group:		Publishing
 URL:		http://tug.org/texlive
