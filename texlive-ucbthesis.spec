@@ -1,46 +1,22 @@
-Name:		texlive-ucbthesis
-Version:	51690
-Release:	2
-Summary:	TeXLive ucbthesis package
+%global tl_name ucbthesis
+%global tl_revision 51690
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.6
+Release:	%{tl_revision}.1
+Summary:	Thesis and dissertation class supporting UCB requirements
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ucbthesis.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ucbthesis.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ucbthesis
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ucbthesis.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ucbthesis.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive ucbthesis package.
+The class provides the necessary framework for electronic submission of
+Masters theses and Ph.D. dissertations at the University of California,
+Berkeley. It is based on the memoir class.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/ucbthesis/ucbthesis.cls
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/README
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/example/abstract.tex
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/example/chap1.tex
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/example/chap2.tex
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/example/references.bib
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/example/thesis.tex
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/ucbthesis.pdf
-%doc %{_texmfdistdir}/doc/latex/ucbthesis/ucbthesis.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
